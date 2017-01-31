@@ -48,11 +48,11 @@ Na verdade, vamos um pouco além. Independentemente de você curtir ou não film
 
 ## Computação Gráfica moderna
 
-A evolução da Computação Gráfica está diretamente ligada à evolução do hardware. Lembra da _Lei de Moore_? Segundo essa "lei", a cada 12 a 18 meses, o poder computacional dobra, enquanto o tamanho diminui. Por exemplo, as novas CPUs da Intel, com arquitetura de 64-bits, têm de 2 a 18 núcleos. Além disso, há também a evolução das placas gráficas: placas da linha GTX Titan, da NVIDIA, chegam a ter 3072 núcleos e 12 GB de memória, resultando em 7 teraflops de processamento. 
+A evolução da Computação Gráfica está diretamente ligada à evolução do hardware. Lembra da _Lei de Moore_? Segundo essa "lei", a cada 12 a 18 meses, o poder computacional dobra, enquanto o tamanho diminui. Por exemplo, as novas CPUs da Intel, com arquitetura de 64-bits, têm de 2 a 18 núcleos. Além disso, há também a evolução das placas gráficas: placas da linha GTX Titan, da NVIDIA, chegam a ter 3072 núcleos e 12 GB de memória, resultando em 7 teraflops de processamento.
 
 Para ver um pouco mais sobre essa evolução, veja o vídeo: [https://www.youtube.com/watch?v=jznazEHJKiY](https://www.youtube.com/watch?v=jznazEHJKiY).
 
-Além do hardware relacionado para produção e reprodução há também o relacionado aos dispositivos de entrada. Você poderia dizer: "tudo começou com o mouse...". Isso é praticamente senso comum. Entretanto, em termos de evolução, o conceito atual está mais ligado com "seu corpo é o controlador". As iniciativas mais populares são o _Kinect_, da Microsoft, _Leap Motion _e _Nimble UX_. Veja só o nível atual: [https://www.youtube.com/watch?v=vALW9fVOXHQ](https://www.youtube.com/watch?v=vALW9fVOXHQ).
+Além do hardware relacionado para produção e reprodução há também o relacionado aos dispositivos de entrada. Você poderia dizer: "tudo começou com o mouse...". Isso é praticamente senso comum. Entretanto, em termos de evolução, o conceito atual está mais ligado com "seu corpo é o controlador". As iniciativas mais populares são o _Kinect_, da Microsoft, _Leap Motion \_e \_Nimble UX_. Veja só o nível atual: [https://www.youtube.com/watch?v=vALW9fVOXHQ](https://www.youtube.com/watch?v=vALW9fVOXHQ).
 
 Claramente, não para por aí. Os tempos atuais mostram uma enorme quantidade de dispositivos \(quase nem sempre considerados como "computacionais"\), como os smartphones e os smartwatches. Ainda, a indústria \(re\)descobriu mais recentemente a interação com o usuário por meio de Realidade Virtual e Realidade Aumentada. O que deu origem a uma nova corrida por um mercado ávido por tecnologia de ponta para aplicações mais diversas, de games a cirurgia médica e arquitetura. É claro que antes de chegarmos a uma aplicação mais profunda, consciente e nobre dessa tecnologia, há alguns percalços. Veja só: [https://www.youtube.com/watch?v=SlD-Yo9q2so](https://www.youtube.com/watch?v=SlD-Yo9q2so).
 
@@ -68,8 +68,6 @@ Claramente, não para por aí. Os tempos atuais mostram uma enorme quantidade de
   * Renderização disponível como um serviço de internet
 
 ## Hardware de telas
-
-
 
 
 
