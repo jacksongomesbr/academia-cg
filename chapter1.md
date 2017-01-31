@@ -54,7 +54,7 @@ Para ver um pouco mais sobre essa evolução, veja o vídeo: [https://www.youtub
 
 Além do hardware relacionado para produção e reprodução há também o relacionado aos dispositivos de entrada. Você poderia dizer: "tudo começou com o mouse...". Isso é praticamente senso comum. Entretanto, em termos de evolução, o conceito atual está mais ligado com "seu corpo é o controlador". As iniciativas mais populares são o _Kinect_, da Microsoft, _Leap Motion \_e \_Nimble UX_. Veja só o nível atual: [https://www.youtube.com/watch?v=vALW9fVOXHQ](https://www.youtube.com/watch?v=vALW9fVOXHQ).
 
-Claramente, não para por aí. Os tempos atuais mostram uma enorme quantidade de dispositivos \(quase nem sempre considerados como "computacionais"\), como os smartphones e os smartwatches. Ainda, a indústria \(re\)descobriu mais recentemente a interação com o usuário por meio de Realidade Virtual e Realidade Aumentada. O que deu origem a uma nova corrida por um mercado ávido por tecnologia de ponta para aplicações mais diversas, de games a cirurgia médica e arquitetura. É claro que antes de chegarmos a uma aplicação mais profunda, consciente e nobre dessa tecnologia, há alguns percalços. Veja só: [https://www.youtube.com/watch?v=SlD-Yo9q2so](https://www.youtube.com/watch?v=SlD-Yo9q2so).
+Claramente, não para por aí. Os tempos atuais mostram uma enorme quantidade de dispositivos \(quase nem sempre considerados como "computacionais"\), como os smartphones e os smartwatches. Ainda, a indústria \(re\)descobriu mais recentemente a interação com o usuário por meio de Realidade Virtual e Realidade Aumentada. O que deu origem a uma nova corrida por um mercado ávido por tecnologia de ponta para aplicações mais diversas, de games a cirurgia médica e arquitetura. É claro que antes de chegarmos a uma aplicação mais profunda, consciente e nobre dessa tecnologia, há alguns ~~tropeços~~ aprendizados. Veja só: [https://www.youtube.com/watch?v=SlD-Yo9q2so](https://www.youtube.com/watch?v=SlD-Yo9q2so).
 
 É claro que a evolução não é exclusiva do hardware. O software também precisa evoluir \(e o tem feito\):
 
@@ -68,6 +68,52 @@ Claramente, não para por aí. Os tempos atuais mostram uma enorme quantidade de
   * Renderização disponível como um serviço de internet
 
 ## Hardware de telas
+
+Em termos práticos, a tela apresenta ou desenha um gráfico. As duas formas mais comumente utilizadas são **gráficos vetoriais** e **gráficos raster.**
+
+Os gráficos vetoriais representam o desenho por uma série de comandos \(ex.: `move(x, y)`, `line(x, y)` ...\). Enquanto isso, os gráficos raster são formados por uma matriz de **pixels**. De outra forma, os gráficos vetoriais são baseados em geometria, enquanto os gráficos raster são baseados em amostragem \(_sampling_\).
+
+![](/assets/raster-vs-vector.png)
+
+### Gráficos baseados em raster
+
+Por serem baseados em amostragem, os gráficos _raster _usam amostras discretas para descrever informação visual. Neste processo, os pixels podem ser criados no processo de digitalização de imagens \(usando _scanner_, por exemplo\). 
+
+Um **Pixel** \(termo que vem de _picture element_\) representa a localização de um ponto \(em um espaço amostral\) associado a outras informações, como cor \(intensidade de luz\) e transparência.
+
+A grande vantagem deste processo de representação de imagem é que, uma vez que ela está representada em termos de cores numa posição \(x,y\) em uma matriz, é possível alterá-la facilmente, seja alterando posição ou cor.
+
+A grande desvantagem é a perda de informação \(qualidade\) durante ampliação e redução da imagem e não ser possível representar informação adicional \(como profundidade, já que a imagem é, naturalmente, um plano 2D\).
+
+### Gráficos baseados em geometria
+
+Nos gráficos baseados em geometria \(vetores\) são criados modelos geométricos \(modelos matemáticos, se preferir\) compostos por vários atributos \(cor, propriedade do material etc.\) e, num segundo momento, são _renderizados _para que seja possível vê-los conforme a necessidade do contexto \(processo chamado _síntese ou produção de imagem_\). Este tipo de gráfico não está limitado ao plano 2D, podendo ser também representado em 3D, 2D animado \(2D + tempo\) e 3D animado \(3D + tempo\).
+
+Os elementos geométricos são chamados _primitivas_ \(ou _formas_\). É a combinação deles que permite criar modelos geométricos que, posteriormente, serão transformados em imagens. De outra forma, um modelo complexo é decomposto em partes menores, mantendo uma relação de hierarquia. 
+
+Por exemplo, a figura a seguir ilustra esse processo considerando a composição de um prego por primitivas geométricas \(cones e cilindros\) que podem passar por _transformações_.
+
+![](/assets/geometric-model-composition-decomposition.png)
+
+As transformações aplicadas a primitivas geométricas são:
+
+* **Translação: **a mudança de posição de um ponto \(x,y\) para o ponto \(z, w\)
+* **Escala: **a mudança de tamanho
+* **Rotação:** a alteração da posição no eixo de rotação
+
+Pode-se representar essa representação na forma de árvore, como ilustra a figura a seguir.
+
+![](/assets/screw-hierarchical-composition.png)
+
+Quando a informação do modelo geométrico está representada desta forma para ser renderizado, usa-se o termo _scene graph _\(ou grafo de cena\).
+
+Embora esse processo pareça simples \(e é\) a sua repeti-lo e alterá-lo permite gerar representações complexas, como a mostrada no vídeo a seguir.
+
+[![](/assets/complex-eye-rendering.png)](https://www.youtube.com/watch?v=TAZIvyAJfeM)
+
+Quer testar como anda a sua percepção? Olha só:
+
+[![](/assets/fake-or-foto.png)](http://area.autodesk.com/fakeorfoto)
 
 
 
