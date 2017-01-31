@@ -1,3 +1,4 @@
-# My Awesome Book
+# Computação Gráfica
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
+Este é um livro open-source que apresenta conceitos da área de Computação Gráfica e suas sub-áreas. Além disso, tem o objetivo de solidificar os conceitos por meio de aplicações práticas, utilizando algoritmos e linguagem de programação.
+
