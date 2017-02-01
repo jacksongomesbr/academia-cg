@@ -42,7 +42,7 @@ Recentemente, para o filme _The Good Dinosaur_ \(_Disney/Pixar, 2016_\) a render
 
 Quer ler um pouco mais sobre isso? Leia o artigo _Making the world of Pixar's The Good Dinosaur_ \([https://www.fxguide.com/featured/making-the-world-of-pixars-the-good-dinosaur/](https://www.fxguide.com/featured/making-the-world-of-pixars-the-good-dinosaur/)\).
 
-Na verdade, vamos um pouco além. Independentemente de você curtir ou não filmes de animação, já parou para pensar nas etapas envolvidas no processo e como a computação gráfica é utilizada? Uma colaboração entre _Pixar \_e \_Khan Academy \_resuultou no curso \_Pixar in a Box_ \([https://pt.khanacademy.org/partner-content/pixar-latam/](https://pt.khanacademy.org/partner-content/pixar-latam/)\). O curso mostra as etapas do jeito Pixar de criar filmes de animação. Dê uma olhada. O vídeo a seguir mostra uma visão geral.
+Na verdade, vamos um pouco além. Independentemente de você curtir ou não filmes de animação, já parou para pensar nas etapas envolvidas no processo e como a computação gráfica é utilizada? Uma colaboração entre _Pixar e Khan Academy _resultou no curso_ Pixar in a Box_ \([https://pt.khanacademy.org/partner-content/pixar-latam/](https://pt.khanacademy.org/partner-content/pixar-latam/)\). O curso mostra as etapas do jeito Pixar de criar filmes de animação. Dê uma olhada. O vídeo a seguir mostra uma visão geral.
 
 [![](/assets/intro-scene-pixar-in-a-box.png)](https://www.youtube.com/watch?v=3Iu1Z0h1i1Y)
 
@@ -52,18 +52,18 @@ A evolução da Computação Gráfica está diretamente ligada à evolução do 
 
 Para ver um pouco mais sobre essa evolução, veja o vídeo: [https://www.youtube.com/watch?v=jznazEHJKiY](https://www.youtube.com/watch?v=jznazEHJKiY).
 
-Além do hardware relacionado para produção e reprodução há também o relacionado aos dispositivos de entrada. Você poderia dizer: "tudo começou com o mouse...". Isso é praticamente senso comum. Entretanto, em termos de evolução, o conceito atual está mais ligado com "seu corpo é o controlador". As iniciativas mais populares são o _Kinect_, da Microsoft, _Leap Motion \_e \_Nimble UX_. Veja só o nível atual: [https://www.youtube.com/watch?v=vALW9fVOXHQ](https://www.youtube.com/watch?v=vALW9fVOXHQ).
+Além do hardware relacionado para produção e reprodução há também o relacionado aos dispositivos de entrada. Você poderia dizer: "tudo começou com o mouse...". Isso é praticamente senso comum. Entretanto, em termos de evolução, o conceito atual está mais ligado com "seu corpo é o controlador". As iniciativas mais populares são o _Kinect_, da Microsoft, _Leap Motion _e_ Nimble UX_. Veja só o nível atual: [https://www.youtube.com/watch?v=vALW9fVOXHQ](https://www.youtube.com/watch?v=vALW9fVOXHQ).
 
 Claramente, não para por aí. Os tempos atuais mostram uma enorme quantidade de dispositivos \(quase nem sempre considerados como "computacionais"\), como os smartphones e os smartwatches. Ainda, a indústria \(re\)descobriu mais recentemente a interação com o usuário por meio de Realidade Virtual e Realidade Aumentada. O que deu origem a uma nova corrida por um mercado ávido por tecnologia de ponta para aplicações mais diversas, de games a cirurgia médica e arquitetura. É claro que antes de chegarmos a uma aplicação mais profunda, consciente e nobre dessa tecnologia, há alguns ~~tropeços~~ aprendizados. Veja só: [https://www.youtube.com/watch?v=SlD-Yo9q2so](https://www.youtube.com/watch?v=SlD-Yo9q2so).
 
 É claro que a evolução não é exclusiva do hardware. O software também precisa evoluir \(e o tem feito\):
 
-* Algoritmos e estruturas de dados
+* **Algoritmos e estruturas de dados**
   * Modelagem de materiais
   * Renderização de fenômenos naturais
   * Melhoria do desempenho de estruturas de dados para tarefas de _ray tracing_ e renderização
-* Paralelização
-* Computação distribuída e em nuvem
+* **Paralelização**
+* **Computação distribuída e em nuvem**
   * Envie operações para _cloud_ e receba o resultado de volta, não importa como
   * Renderização disponível como um serviço de internet
 
@@ -77,7 +77,7 @@ Os gráficos vetoriais representam o desenho por uma série de comandos \(ex.: `
 
 ### Gráficos baseados em raster
 
-Por serem baseados em amostragem, os gráficos _raster \_usam amostras discretas para descrever informação visual. Neste processo, os pixels podem ser criados no processo de digitalização de imagens \(usando \_scanner_, por exemplo\).
+Por serem baseados em amostragem, os gráficos _raster _usam amostras discretas para descrever informação visual. Neste processo, os pixels podem ser criados no processo de digitalização de imagens \(usando scanner ou uma câmera fotográfica, por exemplo\).
 
 Um **Pixel** \(termo que vem de _picture element_\) representa a localização de um ponto \(em um espaço amostral\) associado a outras informações, como cor \(intensidade de luz\) e transparência.
 
@@ -87,7 +87,7 @@ A grande desvantagem é a perda de informação \(qualidade\) durante ampliaçã
 
 ### Gráficos baseados em geometria
 
-Nos gráficos baseados em geometria \(vetores\) são criados modelos geométricos \(modelos matemáticos, se preferir\) compostos por vários atributos \(cor, propriedade do material etc.\) e, num segundo momento, são _renderizados \_para que seja possível vê-los conforme a necessidade do contexto \(processo chamado \_síntese ou produção de imagem_\). Este tipo de gráfico não está limitado ao plano 2D, podendo ser também representado em 3D, 2D animado \(2D + tempo\) e 3D animado \(3D + tempo\).
+Nos gráficos baseados em geometria \(vetores\) são criados modelos geométricos \(modelos matemáticos, se preferir\) compostos por vários atributos \(cor, propriedade do material etc.\) e, num segundo momento, são renderizados para que seja possível vê-los conforme a necessidade do contexto \(processo chamado _síntese _ou _produção de imagem_\). Este tipo de gráfico não está limitado ao plano 2D, podendo ser também representado em 3D, 2D animado \(2D + tempo\) e 3D animado \(3D + tempo\).
 
 Os elementos geométricos são chamados _primitivas_ \(ou _formas_\). É a combinação deles que permite criar modelos geométricos que, posteriormente, serão transformados em imagens. De outra forma, um modelo complexo é decomposto em partes menores, mantendo uma relação de hierarquia.
 
