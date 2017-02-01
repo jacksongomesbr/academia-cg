@@ -77,7 +77,7 @@ Os gráficos vetoriais representam o desenho por uma série de comandos \(ex.: `
 
 ### Gráficos baseados em raster
 
-Por serem baseados em amostragem, os gráficos _raster _usam amostras discretas para descrever informação visual. Neste processo, os pixels podem ser criados no processo de digitalização de imagens \(usando _scanner_, por exemplo\). 
+Por serem baseados em amostragem, os gráficos _raster \_usam amostras discretas para descrever informação visual. Neste processo, os pixels podem ser criados no processo de digitalização de imagens \(usando \_scanner_, por exemplo\).
 
 Um **Pixel** \(termo que vem de _picture element_\) representa a localização de um ponto \(em um espaço amostral\) associado a outras informações, como cor \(intensidade de luz\) e transparência.
 
@@ -87,9 +87,9 @@ A grande desvantagem é a perda de informação \(qualidade\) durante ampliaçã
 
 ### Gráficos baseados em geometria
 
-Nos gráficos baseados em geometria \(vetores\) são criados modelos geométricos \(modelos matemáticos, se preferir\) compostos por vários atributos \(cor, propriedade do material etc.\) e, num segundo momento, são _renderizados _para que seja possível vê-los conforme a necessidade do contexto \(processo chamado _síntese ou produção de imagem_\). Este tipo de gráfico não está limitado ao plano 2D, podendo ser também representado em 3D, 2D animado \(2D + tempo\) e 3D animado \(3D + tempo\).
+Nos gráficos baseados em geometria \(vetores\) são criados modelos geométricos \(modelos matemáticos, se preferir\) compostos por vários atributos \(cor, propriedade do material etc.\) e, num segundo momento, são _renderizados \_para que seja possível vê-los conforme a necessidade do contexto \(processo chamado \_síntese ou produção de imagem_\). Este tipo de gráfico não está limitado ao plano 2D, podendo ser também representado em 3D, 2D animado \(2D + tempo\) e 3D animado \(3D + tempo\).
 
-Os elementos geométricos são chamados _primitivas_ \(ou _formas_\). É a combinação deles que permite criar modelos geométricos que, posteriormente, serão transformados em imagens. De outra forma, um modelo complexo é decomposto em partes menores, mantendo uma relação de hierarquia. 
+Os elementos geométricos são chamados _primitivas_ \(ou _formas_\). É a combinação deles que permite criar modelos geométricos que, posteriormente, serão transformados em imagens. De outra forma, um modelo complexo é decomposto em partes menores, mantendo uma relação de hierarquia.
 
 Por exemplo, a figura a seguir ilustra esse processo considerando a composição de um prego por primitivas geométricas \(cones e cilindros\) que podem passar por _transformações_.
 
@@ -115,5 +115,5 @@ Quer testar como anda a sua percepção? Olha só:
 
 [![](/assets/fake-or-foto.png)](http://area.autodesk.com/fakeorfoto)
 
-
+Para concluir este capítulo, recomendo este vídeo: [https://www.youtube.com/watch?v=QyjyWUrHsFc](https://www.youtube.com/watch?v=QyjyWUrHsFc).
 
