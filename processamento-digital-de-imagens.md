@@ -148,8 +148,10 @@ c. $$D(p,z) \leq D(p,q) + D(q,z)$$.
 A **Distância Euclidiana** entre $$p$$ e $$q$$ é definida como:
 
 $$
-D_e(p,q) = ((x-s)^2 + (y-t)^2)^{\fraq{1}{2}}
+D_e(p,q) = ((x-s)^2 + (y-t)^2)^\frac{1}{2}
 $$ 
+
+Para essa medida de distância, os pixels que possuem distância de $$(x,y)$$ menor ou igual a um valor $$r$$ são os pontos contidos em um disco de raio $$r$$ centrado em $$(x,y)$$.
 
 > Sugestão de leitura: Capítulos 1 e 2 de \(GONZALEZ e WOODS, 2011\)
 
