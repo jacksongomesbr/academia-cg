@@ -115,7 +115,7 @@ Expressamos por $$V$$ o conjunto de valores de intensidade utilizados para defin
 
 * **adjacência-4**: dois pixels $$p$$ e $$q$$ com valores pertencendo a $$V$$ são adjacentes se $$q$$ estiver no conjunto $$N_4(p)$$;
 * **adjacência-8**: dois pixels $$p$$ e $$q$$ com valores pertencendo a $$V$$ são adjacentes-8 se $$q$$ estiver no conjunto $$N_8(p)$$;
-* **adjacência-m**: dois pixels $$p$$ e $$q$$ com valores pertencendo a $$V$$ são adjacentes-m se: a\) $$q$$ estiver em $$N_q(p)$$; ou b\) $$q$$ estiver em $$N_D(p)$$ e o conjunto $$N_4(p) \cap N_4(q)$$ não contiver nenhum pixel cujos valores pertençam a V.
+* **adjacência-m**: dois pixels $$p$$ e $$q$$ com valores pertencendo a $$V$$ são adjacentes-m se: a\) $$q$$ estiver em $$N_q(p)$$; ou b\) $$q$$ estiver em $$N_D(p)$$ e o conjunto $$N_4(p) \cap N_4(q)$$ não contiver nenhum pixel cujos valores pertençam a $$V$$.
 
 A figura a seguir ilustra esse conceito.
 
@@ -129,7 +129,27 @@ $$
 $$
 
 
-onde $$(x_0,y_0)=(x,y),(x_n,y_n)=(s,t)$$ e os pixels $$(x_i,y_i)$$ e $$(x_{i-1},y_{i-1})$$ são adjacentes para $$1 \leq i \leq n$$. Nesse caso, $$n$$ é o comprimento do caminho.
+onde $$(x_0,y_0)=(x,y),(x_n,y_n)=(s,t)$$ e os pixels $$(x_i,y_i)$$ e $$(x_{i-1},y_{i-1})$$ são adjacentes para $$1 \leq i \leq n$$. Nesse caso, $$n$$ é o comprimento do caminho. Se $$(x_0,y_0)=(x_n,y_n)$$, o caminho é _fechado_. 
+
+Com $$S$$ representando um subconjunto de pixels em uma imagem, dizemos que dois pixels $$p$$ e $$q$$ sao _conexos_ em $$S$$ se houver um caminho entre eles consistindo inteiramente de pixels em $$S$$. Para qualquer pixel $$p$$ em $$S$$, o conjunto de pixels que são conectados a ele em $$S$$ é chamado de um _componente conexo_ de $$S$$. Se existir apenas um componente conectado, o conjunto $$S$$ é chamado de _conjunto conexo_.
+
+Com $$R$$ representando um subconjunto de pixels em uma imagem, chamamos de $$R$$ uma _região_ da imagem se $$R$$ for um conjunto conexo. Duas regiões $$R_1$$ e $$R_2$$ são consideradas adjacentes se sua união formar um conjunto conexo. As regiões que não são adjacentes são _disjuntas_.
+
+A _fronteira_ (borda ou contorno) de uma região $$R$$ é o conjunto de pontos adjacentes aos pontos do complemento de $$R$$, ou seja, a fronteira de uma região é o conjunto de pixels da região que tem pelo menos um vizinho no fundo da imagem.
+
+## Medidas de distância
+
+Para os pixels $$p$$, $$q$$ e $$z$$, com coordenadas $$(x,y)$$, $$(s,t)$$, $$(v,w)$$, respectivamente, $$D$$ é uma função distância ou medida de distância se:
+
+a. $$D(p,q) \geq 0$$, com $$D(p,q) = 0$$ se $$p = q$$
+b. $$D(p,q) = D(q,p)$$; e
+c. $$D(p,z) \leq D(p,q) + D(q,z)$$.
+
+A **Distância Euclidiana** entre $$p$$ e $$q$$ é definida como:
+
+$$
+D_e(p,q) = ((x-s)^2 + (y-t)^2)^{\fraq{1}{2}}
+$$ 
 
 > Sugestão de leitura: Capítulos 1 e 2 de \(GONZALEZ e WOODS, 2011\)
 
