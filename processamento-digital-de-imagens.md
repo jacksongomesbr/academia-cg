@@ -127,11 +127,9 @@ Um **caminho** \(ou curva\) do pixel $$p$$ com coordenadas $$(x,y)$$ para o pixe
 $$
 (x_0,y_0),(x_1,y_1),...,(x_n,y_n)
 $$
-onde $$(x_0,y_0)=(x,y),(x_n,y_n)=(s,t)$$ _ _e os pixels $$(x_i,y_i)$$ e $$(x_{i-1},y_{i-1})$$ são adjacentes para $$1 \leq i \leq n$$. Nesse caso, $$n$$ é o comprimento do caminho.
 
 
-
-
+onde $$(x_0,y_0)=(x,y),(x_n,y_n)=(s,t)$$ _ _e os pixels_ _$$(x_i,y_i)$$_ e $$\(x_{i-1},y\_{i-1}\)$$ são adjacentes para $$1 \leq i \leq n$$. Nesse caso, $$n$$ é o comprimento do caminho.
 
 > Sugestão de leitura: Capítulos 1 e 2 de \(GONZALEZ e WOODS, 2011\)
 
