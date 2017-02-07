@@ -4,52 +4,87 @@
 
 Uma imagem pode ser definida como uma função bidimensional $$f(x,y)$$ em que $$x$$ e $$y$$ são coordenadas espaciais \(plano\) e a amplitude de $$f$$ em qualquer par de coordenadas $$(x,y)$$ é chamada **intensidade** ou **nível de cinza** da imagem nesse ponto. Quando $$x$$, $$y$$ e os valores de intensidade de $$f$$ são quantidades finitas e discretas, chamamos de **imagem digital**.
 
-A função $$f(x,y)$$ pode ser caracterizada por dois componentes:
-1. **iluminação**: representada por $$i(x,y)$$, indica a quantidade de iluminação da fonte que incide na cena que está sendo vista; e
+A função $$f(x,y)$$ pode ser caracterizada por dois componentes:  
+1. **iluminação**: representada por $$i(x,y)$$, indica a quantidade de iluminação da fonte que incide na cena que está sendo vista; e  
 2. **refletância**: representada por $$r(x,y)$$, indica a quantidade de iluminação refletida pelos objetos na cena.
 
 Ao combinar as duas funções temos:
+
 
 $$
 f(x,y) = i(x,y) \times r(x,y)
 $$
 
+
 onde:
+
 * $$0 \lt i(x,y) \lt \infty$$
 * $$0 \lt r(x,y) \lt 1$$
 
-Os limites da refletância são chamados de: 
+Os limites da refletância são chamados de:
+
 * $$0$$: absorção total
 * $$1$$: refletância total 
 
-## Representação do pixel (valores de intensidade)
 
-A imagem digital é composta por elementos chamados **pixels**, cada qual armazenando um valor de intensidade. O valor de intensidade é representado em um intervalo:
+## Amostragem e quantização de imagens
 
-$$
-[0, 2^b - 1]
-$$
+A figura a seguir mostra uma imagem contínua $$f$$ que queremos converter em formato digital. Para isso, temos de fazer a amostragem da função em ambas as coordenadas e na amplitude. A digitalização dos valores de coordenada é chamada **amostragem**. A  digitalização dos valores de amplitude é chamada de **quantização**.
 
-onde $$b$$ representa a quantidade de bits ou a **profundidade de bits** da imagem. Geralmente, este valor é limitado em 8 bits por banda do espectro de cor. No caso de imagens monocromáticas, há apenas uma banda (por isso são geralmente chamadas **imagens em tons de cinza**). No caso de imagens coloridas, pode haver mais de duas bandas. O sistema de cor RGB (do inglês _Red, Green, Blue_) representa três bandas baseadas nas cores primárias vermelho, verde e azul.
+![](/assets/produzindo-imagem-digital.png)
 
-A forma mais comum de representar $$f$$ é a matricial, em que os pixels possuem coordenadas $$(x, y)$$ conforme os eixos: $$x$$ representando colunas e $$y$$ representando linhas.
+A figura a seguir ilustra o resultado do processo de amostragem e quantização.
+
+![](/assets/resultado-amostragem-quantizacao.png)
+
+## Representação do pixel \(valores de intensidade\)
+
+A forma mais comum de representar $$f$$ é na forma de uma matriz $$M \times N$$ em que cada elemento $$a_{i,j}$$ está associado a um pixel na coordenada $$(x,y)$$. Nessa representação, $$x = 0, 1, 2, ..., M - 1$$ e $$y = 0, 1, 2, ..., N - 1$$.
 
 Outra forma de representar $$f$$ é utilizando um vetor em que a relação entre o índice do vetor e o pixel da matriz é dada por:
 
+
 $$
-i = x + M \times y, \mbox{ com } x=0...M-1 \mbox{ e } y = 0...N-1
+i = x + M \times y
 $$
 
+
 As posições $$x$$ e $$y$$ de um pixel para um índice $$i$$ do vetor podem ser obtidas por:
+
 
 $$
 x = i \mbox{ mod } M \\
 y = \frac{i}{M}
 $$
 
-> Sugestão de leitura: Capítulo 1 de \(GONZALEZ e WOODS, 2011\)
+A imagem digital é composta por elementos chamados **pixels**, cada qual armazenando um valor de intensidade. O valor de intensidade é representado em um intervalo:
 
 
+$$
+[0, 2^b - 1]
+$$
+
+
+onde $$b$$ representa a quantidade de bits ou a **profundidade de bits** da imagem. Geralmente, este valor é limitado em 8 bits por banda do espectro de cor. 
+
+No caso de imagens monocromáticas, há apenas uma banda \(por isso são geralmente chamadas **imagens em tons de cinza**\). 
+
+No caso de imagens coloridas, pode haver mais de duas bandas. O sistema de cor RGB \(do inglês _Red, Green, Blue_\) representa três bandas baseadas nas cores primárias vermelho, verde e azul.
+
+## Padrões de representação da imagem em programação (e algoritmos)
+
+Ao adotarmos a forma de representação da imagem por uma matriz $$M \times N$$ costumamos trabalhar com os índices $$i$$, para linhas, e $$j$$, para colunas. Assim, o algoritmo a seguir ilustra um percurso por todos os pixels da imagem:
+
+```
+para i de 0 até (M - 1) faça
+    para j de 0 até (N - 1) faça
+        I(i,j) representa o pixel da linha i, coluna j
+    fim-para
+fim-para
+```
+
+
+> Sugestão de leitura: Capítulos 1 e 2 de \(GONZALEZ e WOODS, 2011\)
 
 
 
