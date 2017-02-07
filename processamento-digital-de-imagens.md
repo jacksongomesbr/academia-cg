@@ -1,6 +1,4 @@
-```
-Processamento Digital de Imagens
-```
+# Processamento Digital de Imagens
 
 A figura a seguir dá uma visão geral da relação entre a área de processamento digital de imagens e outras disciplinas.
 
