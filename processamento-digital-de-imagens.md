@@ -83,6 +83,25 @@ para i de 0 até (M - 1) faça
 fim-para
 ```
 
+## Relacionamentos entre pixels
+
+### Vizinhos de um pixel
+
+Um pixel $$p$$ na coordenada $$(x,y)$$ tem quatro vizinhos horizontais e verticais, cujas coordenadas são dadas por:
+
+$$
+(x+1,y), (x-1,y), (x,y+1), (x,y-1)
+$$
+
+Esse conjunto de pixels, chamado de **vizinhança-4** de $$p$$ é expresso por $$N_4(p)$$.
+
+Os quatro vizinhos diagonais de $$p$$ têm coordenadas:
+
+$$
+(x+1,y+1), (x+1,y-1), (x-1,y+1), (x-1,y-1)
+$$
+
+que são expressos 
 
 > Sugestão de leitura: Capítulos 1 e 2 de \(GONZALEZ e WOODS, 2011\)
 
