@@ -1,4 +1,6 @@
-# Processamento Digital de Imagens
+```
+Processamento Digital de Imagens
+```
 
 ## Modelo matemático de formação de imagem
 
@@ -25,7 +27,6 @@ Os limites da refletância são chamados de:
 
 * $$0$$: absorção total
 * $$1$$: refletância total 
-
 
 ## Amostragem e quantização de imagens
 
@@ -57,6 +58,7 @@ x = i \mbox{ mod } M \\
 y = \frac{i}{M}
 $$
 
+
 A imagem digital é composta por elementos chamados **pixels**, cada qual armazenando um valor de intensidade. O valor de intensidade é representado em um intervalo:
 
 
@@ -65,13 +67,13 @@ $$
 $$
 
 
-onde $$b$$ representa a quantidade de bits ou a **profundidade de bits** da imagem. Geralmente, este valor é limitado em 8 bits por banda do espectro de cor. 
+onde $$b$$ representa a quantidade de bits ou a **profundidade de bits** da imagem. Geralmente, este valor é limitado em 8 bits por banda do espectro de cor.
 
-No caso de imagens monocromáticas, há apenas uma banda \(por isso são geralmente chamadas **imagens em tons de cinza**\). 
+No caso de imagens monocromáticas, há apenas uma banda \(por isso são geralmente chamadas **imagens em tons de cinza**\).
 
 No caso de imagens coloridas, pode haver mais de duas bandas. O sistema de cor RGB \(do inglês _Red, Green, Blue_\) representa três bandas baseadas nas cores primárias vermelho, verde e azul.
 
-## Padrões de representação da imagem em programação (e algoritmos)
+## Padrões de representação da imagem em programação \(e algoritmos\)
 
 Ao adotarmos a forma de representação da imagem por uma matriz $$M \times N$$ costumamos trabalhar com os índices $$i$$, para linhas, e $$j$$, para colunas. Assim, o algoritmo a seguir ilustra um percurso por todos os pixels da imagem:
 
@@ -89,19 +91,39 @@ fim-para
 
 Um pixel $$p$$ na coordenada $$(x,y)$$ tem quatro vizinhos horizontais e verticais, cujas coordenadas são dadas por:
 
+
 $$
 (x+1,y), (x-1,y), (x,y+1), (x,y-1)
 $$
+
 
 Esse conjunto de pixels, chamado de **vizinhança-4** de $$p$$ é expresso por $$N_4(p)$$.
 
 Os quatro vizinhos diagonais de $$p$$ têm coordenadas:
 
+
 $$
 (x+1,y+1), (x+1,y-1), (x-1,y+1), (x-1,y-1)
 $$
 
-que são expressos 
+
+que são expressas por $$N_D(p)$$. A união desses conjuntos forma a **vizinhança-8** de p, expressa por $$N_8(p)$$.
+
+### Adjacência e conectividade, regiões e fronteiras
+
+Expressamos por $$V$$ o conjunto de valores de intensidade utilizados para definir a adjacência. Há três tipos:
+
+* **adjacência-4**: dois pixels $$p$$ e $$q$$ com valores pertencendo a $$V$$ são adjacentes se $$q$$ estiver no conjunto $$N_4(p)$$;
+* **adjacência-8**: dois pixels $$p$$ e $$q$$ com valores pertencendo a $$V$$ são adjacentes-8 se $$q$$ estiver no conjunto $$N_8(p)$$;
+* **adjacência-m**: dois pixels $$p$$ e $$q$$ com valores pertencendo a $$V$$ são adjacentes-m se: a\) $$q$$ estiver em $$N_q(p)$$; ou b\) $$q$$ estiver em $$N_D(p)$$ e o conjunto $$N_4(p) \cap N_4(q)$$ não contiver nenhum pixel cujos valores pertençam a V.
+
+A figura a seguir ilustra esse conceito.
+
+
+
+
+
+
 
 > Sugestão de leitura: Capítulos 1 e 2 de \(GONZALEZ e WOODS, 2011\)
 
