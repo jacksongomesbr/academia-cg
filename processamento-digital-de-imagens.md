@@ -2,6 +2,12 @@
 Processamento Digital de Imagens
 ```
 
+A figura a seguir dá uma visão geral da relação entre a área de processamento digital de imagens e outras disciplinas.
+
+![](/assets/dip-and-others.png)
+
+\(BERND GIROD, G. W. Digital Image Processing. Stanford University \(notas de aula\)\)
+
 ## Modelo matemático de formação de imagem
 
 Uma imagem pode ser definida como uma função bidimensional $$f(x,y)$$ em que $$x$$ e $$y$$ são coordenadas espaciais \(plano\) e a amplitude de $$f$$ em qualquer par de coordenadas $$(x,y)$$ é chamada **intensidade** ou **nível de cinza** da imagem nesse ponto. Quando $$x$$, $$y$$ e os valores de intensidade de $$f$$ são quantidades finitas e discretas, chamamos de **imagem digital**.
@@ -129,27 +135,29 @@ $$
 $$
 
 
-onde $$(x_0,y_0)=(x,y),(x_n,y_n)=(s,t)$$ e os pixels $$(x_i,y_i)$$ e $$(x_{i-1},y_{i-1})$$ são adjacentes para $$1 \leq i \leq n$$. Nesse caso, $$n$$ é o comprimento do caminho. Se $$(x_0,y_0)=(x_n,y_n)$$, o caminho é _fechado_. 
+onde $$(x_0,y_0)=(x,y),(x_n,y_n)=(s,t)$$ e os pixels $$(x_i,y_i)$$ e $$(x_{i-1},y_{i-1})$$ são adjacentes para $$1 \leq i \leq n$$. Nesse caso, $$n$$ é o comprimento do caminho. Se $$(x_0,y_0)=(x_n,y_n)$$, o caminho é _fechado_.
 
 Com $$S$$ representando um subconjunto de pixels em uma imagem, dizemos que dois pixels $$p$$ e $$q$$ sao _conexos_ em $$S$$ se houver um caminho entre eles consistindo inteiramente de pixels em $$S$$. Para qualquer pixel $$p$$ em $$S$$, o conjunto de pixels que são conectados a ele em $$S$$ é chamado de um _componente conexo_ de $$S$$. Se existir apenas um componente conectado, o conjunto $$S$$ é chamado de _conjunto conexo_.
 
 Com $$R$$ representando um subconjunto de pixels em uma imagem, chamamos de $$R$$ uma _região_ da imagem se $$R$$ for um conjunto conexo. Duas regiões $$R_1$$ e $$R_2$$ são consideradas adjacentes se sua união formar um conjunto conexo. As regiões que não são adjacentes são _disjuntas_.
 
-A _fronteira_ (borda ou contorno) de uma região $$R$$ é o conjunto de pontos adjacentes aos pontos do complemento de $$R$$, ou seja, a fronteira de uma região é o conjunto de pixels da região que tem pelo menos um vizinho no fundo da imagem.
+A _fronteira_ \(borda ou contorno\) de uma região $$R$$ é o conjunto de pontos adjacentes aos pontos do complemento de $$R$$, ou seja, a fronteira de uma região é o conjunto de pixels da região que tem pelo menos um vizinho no fundo da imagem.
 
 ## Medidas de distância
 
 Para os pixels $$p$$, $$q$$ e $$z$$, com coordenadas $$(x,y)$$, $$(s,t)$$, $$(v,w)$$, respectivamente, $$D$$ é uma função distância ou medida de distância se:
 
-a. $$D(p,q) \geq 0$$, com $$D(p,q) = 0$$ se $$p = q$$
-b. $$D(p,q) = D(q,p)$$; e
+a. $$D(p,q) \geq 0$$, com $$D(p,q) = 0$$ se $$p = q$$  
+b. $$D(p,q) = D(q,p)$$; e  
 c. $$D(p,z) \leq D(p,q) + D(q,z)$$.
 
 A **Distância Euclidiana** entre $$p$$ e $$q$$ é definida como:
 
+
 $$
 D_e(p,q) = ((x-s)^2 + (y-t)^2)^\frac{1}{2}
-$$ 
+$$
+
 
 Para essa medida de distância, os pixels que possuem distância de $$(x,y)$$ menor ou igual a um valor $$r$$ são os pontos contidos em um disco de raio $$r$$ centrado em $$(x,y)$$.
 
