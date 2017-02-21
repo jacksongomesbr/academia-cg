@@ -33,5 +33,82 @@ As operações lógicas e aritméticas em imagens são usadas para modificar os 
 
 > Embora o valor do pixel seja um número \(natural ou real\) a convenção mais comumente aceita é representá-lo no intervalo $$[0,255]$$
 
+### Operação lógica AND
+
+A operação lógica AND utiliza a tabela verdade da operação lógica correspondente para gerar uma imagem binária que corresponde à intersecção dos pixels das duas imagens de entrada, considerando a seguinte equação:
+
+
+$$
+C_{i,j}=A_{i,j} \wedge B_{i,j}
+$$
+Onde $$A_{i,j}$$ representa o pixel $$(i,j)$$ da imagem $$A$$.
+
+### Operação lógica OR
+
+A operação lógica OR utiliza a tabela verdade da operação lógica correspondente para gerar uma imagem que resulta da união dos pixels de duas imagens de entrada, considerando a seguinte equação:
+
+
+$$
+C_{i,j} = A_{i,j} \vee B_{i,j}
+$$
+
+
+### Operação aritmética ADD \(soma\)
+
+A operação ADD é uma operação de soma. Na prática, é realizada uma operacão tradicional de soma dos valores dos pixels para gerar uma nova imagem. A equação a seguir representa a operação ADD:
+
+
+$$
+C_{i,j} = A_{i,j} + B_{i,j}
+$$
+
+
+### Outras operações aritméticas
+
+A seguir, as equações de outras operações aritméticas:
+
+Operação **SUB \(subtração\):**
+
+
+$$
+C_{i,j} = A_{i,j} - B_{i,j}
+$$
+Operação** MULT \(multiplicação\)**:
+
+
+$$
+C_{i,j} = A_{i,j} \times B_{i,j}
+$$
+Operção **DIV \(divisão\)**:
+
+
+$$
+C_{i,j} = A_{i,j} \div B_{i,j}
+$$
+
+
+### Operação de escalonamento
+
+A operação de escalonamento é utilizada para manter um valor dentro de um intervalo, considerando um conjunto de valores, o valor mínimo e o valor máximo. A equação a seguir apresenta a sua formulação matemática:
+
+
+$$
+r = \frac{M}{t_{max} - t_{min}} \times (t - t_{min})
+$$
+
+
+onde:
+
+* $$M$$ é o limite superior desejado \(por exemplo, $$255$$\)
+* $$t_{max}$$ é o maior valor de pixel encontrado na imagem
+* $$t_{min}$$ é o menor valor de pixel encontrado na imagem
+* $$t$$ é o valor de pixel que se deseja escalonar
+
+> ## Exercícios
+>
+> 1\) Implemente as operações matemáticas e aritméticas, bem como a função de escalonamento. 
+>
+> 2\) Escolha uma operação lógica e aplique-a considerando duas imagens coloridas.
+
 
 
