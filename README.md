@@ -4,10 +4,8 @@ Este é um livro open-source que apresenta conceitos da área de Computação Gr
 
 Este material é resultado de uma compilação de várias fontes: livros, tutoriais, aulas e cursos online, exemplos de código e aplicações e vídeos. Os conceitos partem destas fontes:
 
-* GONZALEZ, Rafael C., WOODS, Richard C. Processamento Digital de Imagens. 3. ed. São Paulo: Pearson Prentice Hall, 2010 \(_disponível na biblioteca virtual_\)
+* GONZALEZ, Rafael C., WOODS, Richard C. **Processamento Digital de Imagens**. 3. ed. São Paulo: Pearson Prentice Hall, 2010 \(_disponível na biblioteca virtual_\)
 * Aulas da turma CS123 - Introduction to Computer Graphics, da Brown University: [https://cs.brown.edu/courses/cs123/index.html](https://cs.brown.edu/courses/cs123/index.html)
 
-A URL de leitura do livro é [https://jacksongomesbr.gitbooks.io/computacao-grafica/content/.](https://jacksongomesbr.gitbooks.io/computacao-grafica/content/) 
-
-
+A URL de leitura do livro é [https://jacksongomesbr.gitbooks.io/computacao-grafica/content/.](https://jacksongomesbr.gitbooks.io/computacao-grafica/content/)
 

@@ -6,4 +6,5 @@
 * [Histograma e Operações baseadas em Histograma](histograma-e-operacoes-baseadas-em-histograma.md)
 * [Operações em imagens](operacoes-em-imagens.md)
 * [PDI na prática](pdi-na-pratica.md)
+* [Filtragem Espacial](filtragem-espacial.md)
 
