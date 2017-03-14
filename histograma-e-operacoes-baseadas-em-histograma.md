@@ -30,6 +30,8 @@ A função $$h$$ deve ser aplicada para cada nível de intensidade presente na i
 $$
 \{ h(I,l) \mid l \in \{0, ..., 255\} \}
 $$
+
+
 De um modo geral deseja-se encontrar o conjunto:
 
 
@@ -37,6 +39,25 @@ $$
 \{ h(I,l) \mid l \in \{0, ..., (2^b - 1)\} \}
 $$
 
+
+Algoritmo para encontrar o histograma de imagem em tom de cinza, com 8 bits de cores:
+
+```
+Algoritmo Histograma
+
+I = imagem()   # matriz linha x coluna representando a imagem
+h = vetor(256) # define um vetor com 256 elementos
+h[] = 0 # atribui o valor 0 para cada elemento do vetor
+
+para i de 1 até linhas(I) faça # percorre as linhas
+    para j de 1 até colunas(I) faça # percorre as colunas
+        h[ I[i][j] ]++         # incrementa h no índice correspondente 
+                               # ao valor de intensidade
+```
+
+A figura a seguir ilustra histogramas de quatro tipos básicos de imagens: escura, clara, baixo contraste e alto contraste.
+
+![](/assets/tipos-basicos-de-imagens-e-histogramas.png)
 
 ## Histograma normalizado
 
@@ -102,9 +123,27 @@ A equalização de histograma é uma operação de processamento de imagem que t
 
 
 $$
-I' = h_{\mbox{acum_norm}}(I, l) \times (2^b - 1), \forall p \in I \wedge \forall l \ in \{0, ..., (2^b-1)\}
+I' = h_{\mbox{acum_norm}}(I, l) \times (2^b - 1), \forall p \in I, \forall l \in \{0, ..., (2^b-1)\}
 $$
- 
+
+
+A figura a seguir ilustra os efeitos da equalização de histograma em quatro tipos de imagens: escura, clara, baixo contraste e alto contraste.
+
+![](/assets/equalizacao-histograma-aplicada-imagens.png)
+
+O algoritmo para a equalização de histograma é apresentado a seguir.
+
+```
+Algoritmo EqualizacaoDeHistograma
+
+I = imagem()   # matriz linha x coluna representando a imagem
+
+h = HistogramaNormalizadoAcumulado()  # encontra o histograma normalizado acumulado
+
+para i de 1 até linhas(I) faça        # percorre as linhas
+    para j de 1 até colunas(I) faça   # percorre as colunas
+            I[i][j] = h[ I[i][j] ]    # equaliza o pixel na posicao (i, j)
+```
 
 > ## Exercício
 >
