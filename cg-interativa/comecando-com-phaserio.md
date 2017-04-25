@@ -12,13 +12,13 @@ Para resolver essa questão é necessário utilizar um servidor Http para entreg
 npm install --save-dev http-server
 ```
 
-Isso fará com que o `http-server` esteja disponível no caminho `node_modules/.bin/http-server`_ ou _`node_modules/.bin/hs`. 
+Isso fará com que o `http-server` esteja disponível no caminho `node_modules/.bin/http-server`_ ou _`node_modules/.bin/hs`.
 
 ## Download do phaser
 
 O phaser.io está disponível na versão Community Edition \(CE\). Para o desenvolvimento há diversas opções, todas disponíveis na [página de download](http://phaser.io/download/stable):
 
-* clonar o repositório do Github: https://github.com/photonstorm/phaser-ce
+* clonar o repositório do Github: [https://github.com/photonstorm/phaser-ce](https://github.com/photonstorm/phaser-ce)
 * fazer download da versão compilada \(disponível em um arquivo não minimificado, `phaser.js`, e minimificado: `phaser.min.js`\)
 * fazer download de um pacote compactado \(Zip ou Tar\), que contém código-fonte, a versão compilada e outros recursos, como documentação e projetos de exemplo
 * utilizar npm e instalar o pacote `phaser-ce`
@@ -27,7 +27,7 @@ A sugestão é começar com a versão minimificada, por exemplo, fazendo downloa
 
 ## Documentação da API
 
-A documentação oficial do phaser.io está disponível em [https://photonstorm.github.io/phaser-ce/](https://photonstorm.github.io/phaser-ce/). 
+A documentação oficial do phaser.io está disponível em [https://photonstorm.github.io/phaser-ce/](https://photonstorm.github.io/phaser-ce/).
 
 ## Hello World e estrutura padrão do software
 
@@ -91,13 +91,15 @@ O estado `preload` é o primeiro a ser chamado no ciclo de estados. Geralmente �
 * `key`: nome da imagem para o jogo \(no caso, chama-se `logo`\)
 * `path`: o caminho da imagem \(no caso, `../images/phaser.png`\)
 
+Assim, será possível fazer uma referência à imagem pelo seu nome.
+
 A imagem não é carregada imediatamente logo após a chamada desse método. O arquivo é adicionado em uma fila do loader para ser carregado posteriormente.
 
 #### Estado `create`
 
 O estado `create` é chamado depois do estado `preload`. 
 
-
+No caso do exemplo, na função `create()` o código realizada duas tarefas. Primeiro, cria um _sprite_ e depois configura o seu posionamento na área do jogo.
 
 
 
