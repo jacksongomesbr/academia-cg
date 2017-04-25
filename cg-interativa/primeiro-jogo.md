@@ -116,5 +116,11 @@ A partir de então, o player cai ao ser adicionado no mundo, mas fica parado sob
 
 ## Controlando o player com o teclado
 
+O Phaser possui um gerenciador de entrada do usuário a partir do teclado, que pode ser obtido acrescentando a linha de código a seguir ao final da função `create()`:
+
+```
+cursors = game.input.keyboard.createCursorKeys();
+```
+
 
 
