@@ -114,5 +114,7 @@ A função `update()` é chamada a cada frame do jogo. Por essa razão ela é ex
 
 A partir de então, o player cai ao ser adicionado no mundo, mas fica parado sobre o chão \(ground\).
 
+## Controlando o player com o teclado
+
 
 
