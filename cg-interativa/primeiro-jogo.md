@@ -45,5 +45,9 @@ Perceba que o sprite está posicionado no canto superior esquerdo ou na posiçã
 
 Uma das habilidades de um programador de jogos é construir mundos. Visualmente, já sabemos que o Phaser indica que a posição \(0, 0\) representa a origem do plano de coordenadas que representa o mundo. Isso significa que faz parte dessa habilidade desenvolver a prática de posicionar objetos. A figura a seguir ilustra uma etapa do jogo que foi crida usando posicionamento e outros recursos.
 
+![](/assets/jumper0-2.png)
+
+Embora o usuário veja uma cena que parece ter sido construída utilizando um software de edição de imagem, ela é, na verdade, uma composição de várias imagens carregadas anteriormente, em específico, as imagens chamadas "sky" \(o céu, ao fundo\) e "platform" \(plataforma, que está replicada em vários locais\).
+
 
 
