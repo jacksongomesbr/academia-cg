@@ -144,3 +144,7 @@ A classe `Phaser.Sprite` possui o atributo `anchor`, do tipo `Phaser.Point`. Ess
 
 Assim, no caso do código de exemplo, a textura está centralizada.
 
+A figura a seguir ilustra a execução do "hello world" no browser.
+
+![](/assets/phaser-helloworld.png)
+
