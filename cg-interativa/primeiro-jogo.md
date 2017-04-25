@@ -35,11 +35,9 @@ function create () {
 }
 ```
 
-O objeto `game.add`, do tipo `GameObjectFactory`, fornece o método `sprite()`, que mostra o sprite chamado "star" na posição definida pelo par de coordenadas `(0, 0)`. O resultado do jogo até então é ilustrado pela figura a seguir.
+O objeto `game.add`, do tipo `GameObjectFactory`, fornece o método `sprite()`, que cria um sprite usando a imagem chamada "star" como textura, e o inclui no mundo, na posição definida pelo par de coordenadas `(0, 0)`. O resultado do jogo até então é ilustrado pela figura a seguir.
 
 ![](/assets/jumper0-1.png)
 
 Perceba que o sprite está posicionado no canto superior esquerdo ou na posição \(0, 0\).
-
-
 
