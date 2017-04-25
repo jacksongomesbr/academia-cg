@@ -122,5 +122,41 @@ O Phaser possui um gerenciador de entrada do usuário a partir do teclado, que p
 cursors = game.input.keyboard.createCursorKeys();
 ```
 
+O objeto `cursors` é uma variável declarada fora da função `create()` para poder ser utilizada no restante do código. O tratamento de qual tecla foi pressionada é realizado na função `update()`, cujo código é apresentado a seguir:
 
+```
+function update() {
+    game.physics.arcade.collide(player, platforms);
+
+    player.body.velocity.x = 0;
+    if (cursors.left.isDown)
+    {
+        player.body.velocity.x = -150;
+        player.animations.play('left');
+    }
+    else if (cursors.right.isDown)
+    {
+        player.body.velocity.x = 150;
+        player.animations.play('right');
+    }
+    else
+    {
+        player.animations.stop();
+        player.frame = 4;
+    }
+    
+    if (cursors.up.isDown && player.body.touching.down)
+    {
+        player.body.velocity.y = -350;
+    }            
+}
+```
+
+Quando a tecla "seta para esquerda" for pressionada o atributo `cursors.left.isDown` será `true` e o código executará a animação "left", usando `player.animations.play()`. Além disso, o atributo `player.body.velocity` é modificado, fazendo com que seja negativo no eixo x \(ou seja, move o player para a esquerda\).
+
+Quando a tecla "seta para direita" for pressionada o atributo `cursors.right.isDown` será `true` e o código executará a animação "right". O player será movido para a direta, atribuindo valor positivo para o atributo `player.body.velocity.x`.
+
+Se nenhuma dessas teclas estiver pressionada, a animação para e o player recebe a textura que está no frame 4.
+
+A última parte do código adiciona a habilidade de pular. O código checa se a tecla "seta para cima" foi pressionada e se o player está tocando o chão \(atributo `player.body.touching.down`\). Se o condicional for verdadeiro, o código aplica uma velocidade vertical de 350 pixels por segundo. O player vai cair novamente de volta para o chão por causa da gravidade aplicada anteriormente.
 
