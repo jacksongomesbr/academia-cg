@@ -11,4 +11,5 @@
 ## CG Interativa
 
 * [Introdução](cg-interativa/introducao.md)
+* [Começando com Phaser.io](cg-interativa/comecando-com-phaserio.md)
 
