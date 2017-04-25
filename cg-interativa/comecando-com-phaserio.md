@@ -14,6 +14,14 @@ npm install --save-dev http-server
 
 Isso fará com que o `http-server` esteja disponível no caminho `node_modules/.bin/http-server`_ ou _`node_modules/.bin/hs`.
 
+Para executar o jogo e acessá-lo no browser em tempo de desenvolvimento pode-se executar o `http-server` usando:
+
+```
+node_modules/.bin/hs
+```
+
+Isso fará com que, por padrão, o jogo esteja disponível via Http no endereço `http://localhost:8080`.
+
 ## Download do phaser
 
 O phaser.io está disponível na versão Community Edition \(CE\). Para o desenvolvimento há diversas opções, todas disponíveis na [página de download](http://phaser.io/download/stable):
@@ -111,7 +119,7 @@ O objeto `game.add`, do tipo `Phaser.GameObjectFactory`, fornece o método `spri
 * `y`: posição na coordenada y
 * `key`: nome da imagem \(usada como textura\)
 
-No caso do código de exemplo, os valores de x e y são obtidos dos atributos `centerX` e `centerY` do objeto `game.world`, do tipo `Phaser.World`. 
+No caso do código de exemplo, os valores de x e y são obtidos dos atributos `centerX` e `centerY` do objeto `game.world`, do tipo `Phaser.World`.
 
 ## World
 
@@ -134,5 +142,5 @@ A classe `Phaser.Sprite` possui o atributo `anchor`, do tipo `Phaser.Point`. Ess
 * `0.5,0.5`: a origem da textura é o centro
 * `1,1`: a origem da textura é o canto inferior direito
 
-Assim, no caso do código de exemplo, a textura está centralizada. 
+Assim, no caso do código de exemplo, a textura está centralizada.
 
