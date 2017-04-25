@@ -105,11 +105,34 @@ No caso do exemplo, na função `create()` o código realizada duas tarefas. Pri
 var logo = game.add.sprite(game.world.centerX, game.world.centerY, 'logo');
 ```
 
-O objeto `game.add`, do tipo `Phaser.GameObjectFactory`, fornece o método `sprite()`, que cria um _sprite_ e o posiciona. Aceita os parâmetros:
+O objeto `game.add`, do tipo `Phaser.GameObjectFactory`, fornece o método `sprite()`, que cria um objeto `Phaser.Sprite` e o posiciona. Aceita os parâmetros:
 
 * `x`: posição na coordenada x
 * `y`: posição na coordenada y
-* `key`: nome da imagem usada
+* `key`: nome da imagem \(usada como textura\)
 
+No caso do código de exemplo, os valores de x e y são obtidos dos atributos `centerX` e `centerY` do objeto `game.world`, do tipo `Phaser.World`. 
 
+## World
+
+O world, classe Phaser.World, representa um local abstrato, no qual estão todos os objetos do jogo. As câmeras permitem "olhar" para o mundo, tornando os seus objetos visíveis.
+
+O objeto `game.world`, do tipo `Phaser.World`, possui dois atributos usados no código de exemplo:
+
+* `centerX`: retorna a posição x do centro do mundo
+* `centerY`: retorna a posição y do centro do mundo
+
+Dessa forma, o código de exemplo cria um sprite e o posiciona no centro do mundo.
+
+## Sprite
+
+O sprite, classe `Phaser.Sprite`, representa uma parte vital do jogo, praticamente todo objeto visual. O sprite mais básico consiste de uma posição, coordenada \(x,y\), e uma textura que é renderizada no canvas. Além disso, contém propriedades para lidar, por exemplo, com física \(`Sprite.body`\), tratamento de entrada \(`Sprite.input`\), eventos \(`Sprite.events`\) e animação \(`Sprite.animations`\).
+
+A classe `Phaser.Sprite` possui o atributo `anchor`, do tipo `Phaser.Point`. Esse atributo define o ponto de origem da textura. O método `setTo()` aceita dois parâmetros, o par de coordenadas x,y, e possui valores-padrões:
+
+* `0,0`: a origem da textura é o canto superior esquerdo
+* `0.5,0.5`: a origem da textura é o centro
+* `1,1`: a origem da textura é o canto inferior direito
+
+Assim, no caso do código de exemplo, a textura está centralizada. 
 
