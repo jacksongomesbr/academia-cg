@@ -98,7 +98,21 @@ O sprite representado pelo objeto `player` é adicionado no mundo, utilizando co
 * left: usa os frames 0 a 3 e executa a 10 frames por segundo
 * right: usa os frames 5 a 8 e executa a 10 frames por segundo
 
+Até o momento, quando o player é adicionando no mundo, ele cai. Isso é conseguido por meio da configuração de gravidade do sprite usando `player.body.gravity.y`.  O código atribui o valor 300. Quanto maior o valor, maior é o efeito da gravidade sobre o objeto, fazendo com que ele caia mais rápido.
 
+## Tratando colisão
+
+Colisões entre objetos representam grande parte do funcionamento de um mecanismo de física em um framework de jogos. Com o código até o momento, o player é adicionado em uma posição do mundo e cai, mas não para sobre o sprite que representa o chão \(ground\). Para fazer isso é necessário tratar colisão em um estado do jogo chamado `update`. A seguir o trecho de código apresenta a função `update()`:
+
+```
+function update() {
+    game.physics.arcade.collide(player, platforms);
+}
+```
+
+A função `update()` é chamada a cada frame do jogo. Por essa razão ela é executada no "loop de jogo". A função collide\(\) testa a colisão entre dois objetos. Neste caso, está testando se existe uma colisão entre `player` e `platforms`. Como o segundo é um grupo, então a função testa a colisão entre o `player` e todos os componentes do grupo \(todas as plataformas\).
+
+A partir de então, o player cai ao ser adicionado no mundo, mas fica parado sobre o chão \(ground\).
 
 
 
