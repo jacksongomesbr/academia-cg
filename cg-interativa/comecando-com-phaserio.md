@@ -97,9 +97,19 @@ A imagem não é carregada imediatamente logo após a chamada desse método. O a
 
 #### Estado `create`
 
-O estado `create` é chamado depois do estado `preload`. 
+O estado `create` é chamado depois do estado `preload`.
 
 No caso do exemplo, na função `create()` o código realizada duas tarefas. Primeiro, cria um _sprite_ e depois configura o seu posionamento na área do jogo.
+
+```
+var logo = game.add.sprite(game.world.centerX, game.world.centerY, 'logo');
+```
+
+O objeto `game.add`, do tipo `Phaser.GameObjectFactory`, fornece o método `sprite()`, que cria um _sprite_ e o posiciona. Aceita os parâmetros:
+
+* `x`: posição na coordenada x
+* `y`: posição na coordenada y
+* `key`: nome da imagem usada
 
 
 
