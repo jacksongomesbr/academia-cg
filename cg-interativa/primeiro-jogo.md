@@ -71,7 +71,7 @@ function create() {
 
 Primeiro, o código chama o método `startSystem()` do objeto `game.physics`, do tipo `Phaser.Physics`, passando como parâmetro o valor `Phaser.Physics.ARCADE`. Isso faz com que um sistema de física chamado "Arcade Physics" seja utilizado.
 
-Na sequência, sprites são adicionados no mundo, começando pelo sprite "sky", que é adicionado na posição \(0, 0\). A textura desse sky representa o fundo \(o céu\). 
+Na sequência, sprites são adicionados no mundo, começando pelo sprite "sky", que é adicionado na posição \(0, 0\). A textura desse sky representa o fundo \(o céu\).
 
 Um grupo de objetos do jogo é criado por meio do método `group()` do objeto `game.add`, do tipo `GameObjectFactory`. O tipo retornado por esse método é `Phaser.Group`. Inclusive é importante notar que a variável `platforms` é declarada fora da função `create()` para que seja utilizada, posteriormente, por outras funções. Como o jogo utiliza física, o objetivo é tornar as plataformas em áreas que interagem fisicamente com um objeto \(por exemplo, um personagem fica em cima de uma plataforma\). Assim, o atributo `enableBody` recebe o valor `true`.
 
@@ -80,6 +80,25 @@ A partir de então, o objeto `platforms` é utilizado para criar outros objetos 
 Outros sprites são adicionados no grupo, em posições diferentes, para representar os níveis superiores da plataforma.
 
 ## Adicionando o player
+
+O código a seguir é adicionado ao final da função `create()`:
+
+```
+player = game.add.sprite(32, game.world.height - 150, 'dude');
+game.physics.arcade.enable(player);
+player.body.bounce.y = 0.2;
+player.body.gravity.y = 300;
+player.body.collideWorldBounds = true;
+player.animations.add('left', [0, 1, 2, 3], 10, true);
+player.animations.add('right', [5, 6, 7, 8], 10, true);
+```
+
+O sprite representado pelo objeto `player` é adicionado no mundo, utilizando como textura a imagem chamada "dude". Importante relembrar que essa textura é um sprite sheet. A física é habilitada usando `game.physics.arcade.enable()`. Além disso, o sprite tem duas animações, criadas usando `player.animations.add()`:
+
+* left: usa os frames 0 a 3 e executa a 10 frames por segundo
+* right: usa os frames 5 a 8 e executa a 10 frames por segundo
+
+
 
 
 
