@@ -12,7 +12,92 @@ Para resolver essa questão é necessário utilizar um servidor Http para entreg
 npm install --save-dev http-server
 ```
 
-Isso fará com que o http-server esteja disponível no caminho `node\\`_`modules/.bin/http-server` ou `node`_`modules/.bin/hs`.
+Isso fará com que o `http-server` esteja disponível no caminho `node_modules/.bin/http-server`_ ou _`node_modules/.bin/hs`. 
+
+## Download do phaser
+
+O phaser.io está disponível na versão Community Edition \(CE\). Para o desenvolvimento há diversas opções, todas disponíveis na [página de download](http://phaser.io/download/stable):
+
+* clonar o repositório do Github: https://github.com/photonstorm/phaser-ce
+* fazer download da versão compilada \(disponível em um arquivo não minimificado, `phaser.js`, e minimificado: `phaser.min.js`\)
+* fazer download de um pacote compactado \(Zip ou Tar\), que contém código-fonte, a versão compilada e outros recursos, como documentação e projetos de exemplo
+* utilizar npm e instalar o pacote `phaser-ce`
+
+A sugestão é começar com a versão minimificada, por exemplo, fazendo download do arquivo `phaser.min.js` e armazenando-o na pasta `js`.
+
+## Documentação da API
+
+A documentação oficial do phaser.io está disponível em [https://photonstorm.github.io/phaser-ce/](https://photonstorm.github.io/phaser-ce/). 
+
+## Hello World e estrutura padrão do software
+
+O código a seguir apresenta o conteúdo do arquivo `helloworld/index.html`:
+
+```
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <title>hello phaser!</title>
+        <script src="../js/phaser.min.js"></script>
+        <script type="text/javascript">
+        var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create });
+
+        function preload () {
+            game.load.image('logo', '../images/phaser.png');
+        }
+
+        function create () {
+            var logo = game.add.sprite(game.world.centerX, game.world.centerY, 'logo');
+            logo.anchor.setTo(0.5, 0.5);
+        }
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
+```
+
+A parte mais importante do código HTML possui dois elementos `script`. O primeiro representa a importação do framework phaser.io por meio do arquivo `phaser.min.js`. A partir de então, o segundo representa o código do software, em si e será explicado a seguir.
+
+### Classe Game
+
+A classe `Phaser.Game` representa o controlador principal do jogo. Ela é responsável por tratar o processo de boot, analisar arquivos de configuração, criar o renderer e configurar todos os sistemas do Phaser, como física, entrada e som.
+
+A primeira linha do código cria uma instância dessa classe, informando alguns parâmetros:
+
+```
+var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create });
+```
+
+* primeiros dois parâmetros: representam a geometria \(resolução\) da área do jogo. No caso do exemplo, representa a criação de uma área com 800 x 600 pixels
+* terceiro parâmetro: especifica o renderer, que trata das tarefas de desenho no browser. O padrão é `Phaser.AUTO`
+* quarto parâmetro: especifica o parent, o componente no qual será criado um elemento `canvas`, usado pelo phaser para as tarefas de desenho. O padrão é `''`
+* quinto parâmetro: especifica o objeto `State`, que representa o estado do jogo. No caso do exemplo, o estado do jogo possui duas fases: `preload` e `create`, cada um chamando uma função correspondente
+
+Outra característica importante é que o código cria o objeto `game` e o disponibiliza globalmente para todo o código.
+
+### Classe State
+
+A classe `Phaser.State` representa o estado do jogo. No caso do exemplo são tratados dois estados:
+
+* `preload`: tratado na função `preload()`
+* `create`: tratado na função `create()`
+
+#### Estado `preload`
+
+O estado `preload` é o primeiro a ser chamado no ciclo de estados. Geralmente é usado para carregar recursos do jogo, como imagens e fontes. No caso do exemplo, a função `preload()` faz exatamente isso por meio do objeto `game.loader`, do tipo `Phaser.Loader`. Esse objeto, também chamado _loader_, fornece o método `image()`, que recebe os parâmetros:
+
+* `key`: nome da imagem para o jogo \(no caso, chama-se `logo`\)
+* `path`: o caminho da imagem \(no caso, `../images/phaser.png`\)
+
+A imagem não é carregada imediatamente logo após a chamada desse método. O arquivo é adicionado em uma fila do loader para ser carregado posteriormente.
+
+#### Estado `create`
+
+O estado `create` é chamado depois do estado `preload`. 
+
+
 
 
 
