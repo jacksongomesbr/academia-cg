@@ -41,3 +41,9 @@ O objeto `game.add`, do tipo `GameObjectFactory`, fornece o método `sprite()`, 
 
 Perceba que o sprite está posicionado no canto superior esquerdo ou na posição \(0, 0\).
 
+## Construindo um mundo
+
+Uma das habilidades de um programador de jogos é construir mundos. Visualmente, já sabemos que o Phaser indica que a posição \(0, 0\) representa a origem do plano de coordenadas que representa o mundo. Isso significa que faz parte dessa habilidade desenvolver a prática de posicionar objetos. A figura a seguir ilustra uma etapa do jogo que foi crida usando posicionamento e outros recursos.
+
+
+
