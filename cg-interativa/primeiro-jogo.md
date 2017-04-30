@@ -144,7 +144,7 @@ function update() {
         player.animations.stop();
         player.frame = 4;
     }
-    
+
     if (cursors.up.isDown && player.body.touching.down)
     {
         player.body.velocity.y = -350;
@@ -158,5 +158,9 @@ Quando a tecla "seta para direita" for pressionada o atributo `cursors.right.isD
 
 Se nenhuma dessas teclas estiver pressionada, a animação para e o player recebe a textura que está no frame 4.
 
-A última parte do código adiciona a habilidade de pular. O código checa se a tecla "seta para cima" foi pressionada e se o player está tocando o chão \(atributo `player.body.touching.down`\). Se o condicional for verdadeiro, o código aplica uma velocidade vertical de 350 pixels por segundo. O player vai cair novamente de volta para o chão por causa da gravidade aplicada anteriormente.
+A última parte do código adiciona a habilidade de pular. O código checa se a tecla "seta para cima" foi pressionada e se o player está tocando o chão \(atributo `player.body.touching.down`\). Se o condicional for verdadeiro, o código aplica uma velocidade vertical negativa de 350 pixels por segundo. O player vai cair novamente de volta para o chão por causa da gravidade aplicada anteriormente.
+
+## Adicionando propósito ao jogo
+
+
 
