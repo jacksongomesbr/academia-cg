@@ -98,7 +98,7 @@ O sprite representado pelo objeto `player` é adicionado no mundo, utilizando co
 * left: usa os frames 0 a 3 e executa a 10 frames por segundo
 * right: usa os frames 5 a 8 e executa a 10 frames por segundo
 
-Até o momento, quando o player é adicionando no mundo, ele cai. Isso é conseguido por meio da configuração de gravidade do sprite usando `player.body.gravity.y`.  O código atribui o valor 300. Quanto maior o valor, maior é o efeito da gravidade sobre o objeto, fazendo com que ele caia mais rápido. O player não vai sair da tela porque a colisão com os limites da área de visualização do mundo está sendo tratada por meio de `player.body.collideWorldBounds = true`. 
+Até o momento, quando o player é adicionando no mundo, ele cai. Isso é conseguido por meio da configuração de gravidade do sprite usando `player.body.gravity.y`.  O código atribui o valor 300. Quanto maior o valor, maior é o efeito da gravidade sobre o objeto, fazendo com que ele caia mais rápido. O player não vai sair da tela porque a colisão com os limites da área de visualização do mundo está sendo tratada por meio de `player.body.collideWorldBounds = true`.
 
 Quando o player colide com um dos limites do mundo ou com um corpo físico \(próxima seção\), há uma leve "quicada" na vertical, o que é conseguido por meio de `player.body.bounce.y = 0.2`. O atributo `player.body.bounce.y` é um valor numérico entre 0 \(nenhum quique\) e 1 \(um quique completo\).
 
@@ -217,5 +217,30 @@ function collectStar(player, star) {
 }
 ```
 
+Para concluir o jogo, falta indicar para o jogador o quão bom é o seu desempenho ao controlar o player para coletar estrelas. Há várias formas de apresentar informações ao jogador durante o jogo e isso é assunto longo, para outro momento. Vamos adotar uma forma mais simples: apresentar ao jogador, na tela, a sua pontuação, que é acrescentada em 10 pontos para cada estrela coletada. Para isso, são adicionadas duas variáveis ao código e acontece uma modificação na função `create()`:
 
+```
+var score = 0;
+var scoreText;
+
+function create() {
+    // ...
+    
+    scoreText = game.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
+}
+```
+
+A função `game.add.text()` cria um objeto \(`scoreText`\) que representa texto. Os parâmetros indicam a posição do texto na tela, o texto que será apresentado \(começa com pontuação zero\) e algumas propriedades de estilo e apresentação \(tamanho da fonte e cor\). 
+
+O objeto scoreText é modificado na função `collectStar()`:
+
+```
+function collectStar(player, star) {
+    star.kill();
+    score += 10;
+    scoreText.text = 'Score: ' + score;
+}
+```
+
+Assim, o código remove do jogo a estrela que colidiu com o player, incrementa a pontuação \(variável `score`\) e atualiza o texto do objeto `scoreText` \(atributo `text`\) para refletir a nova pontuação.
 
