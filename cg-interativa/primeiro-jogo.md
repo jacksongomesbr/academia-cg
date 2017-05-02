@@ -98,7 +98,9 @@ O sprite representado pelo objeto `player` é adicionado no mundo, utilizando co
 * left: usa os frames 0 a 3 e executa a 10 frames por segundo
 * right: usa os frames 5 a 8 e executa a 10 frames por segundo
 
-Até o momento, quando o player é adicionando no mundo, ele cai. Isso é conseguido por meio da configuração de gravidade do sprite usando `player.body.gravity.y`.  O código atribui o valor 300. Quanto maior o valor, maior é o efeito da gravidade sobre o objeto, fazendo com que ele caia mais rápido.
+Até o momento, quando o player é adicionando no mundo, ele cai. Isso é conseguido por meio da configuração de gravidade do sprite usando `player.body.gravity.y`.  O código atribui o valor 300. Quanto maior o valor, maior é o efeito da gravidade sobre o objeto, fazendo com que ele caia mais rápido. O player não vai sair da tela porque a colisão com os limites da área de visualização do mundo está sendo tratada por meio de `player.body.collideWorldBounds = true`. 
+
+Quando o player colide com um dos limites do mundo ou com um corpo físico \(próxima seção\), há uma leve "quicada" na vertical, o que é conseguido por meio de `player.body.bounce.y = 0.2`. O atributo `player.body.bounce.y` é um valor numérico entre 0 \(nenhum quique\) e 1 \(um quique completo\).
 
 ## Tratando colisão
 
@@ -161,6 +163,59 @@ Se nenhuma dessas teclas estiver pressionada, a animação para e o player receb
 A última parte do código adiciona a habilidade de pular. O código checa se a tecla "seta para cima" foi pressionada e se o player está tocando o chão \(atributo `player.body.touching.down`\). Se o condicional for verdadeiro, o código aplica uma velocidade vertical negativa de 350 pixels por segundo. O player vai cair novamente de volta para o chão por causa da gravidade aplicada anteriormente.
 
 ## Adicionando propósito ao jogo
+
+Até agora o jogo mais parece um "aplicativo interativo". Faltam elementos principais que procurem despertar no jogador um sentimento de desafio e de saber o quanto ele está desempenhando bem ou mal essa tarefa. Para isso, a partir daqui vamos trabalhar para adicionar propósito ao jogo. A estratégia para isso será adicionar estrelas brilhantes que devem ser coletadas pelo jogador. Assim, a principal modificação será na função `create()`:
+
+```
+var stars;
+
+function create() {
+    // ...
+    // criando estrelas
+    stars = game.add.group();
+    stars.enableBody = true;
+    for (var i = 0; i < 12; i++) {
+        var star = stars.create(i * 70, 0, 'star');
+        star.body.gravity.y = 6;
+        star.body.bounce.y = 0.7 + Math.random() * 0.2;
+    }    
+}
+```
+
+O processo é semelhante ao usado anteriormente para criar as plataformas: criar grupos de elementos usando `game.add.group()`. Ainda:
+
+* as estrelas são posicionadas de forma igualmente espaçada \(veja `stars.create()`\)
+* as estrelas caem por causa da gravidade \(`star.body.gravity.y = 6`\)
+* as estrelas quicam quando caem sobre algum corpo físico
+
+No último caso, a configuração da "quicada" é feita de forma aleatória, entre 0,7 e 0,9.
+
+Agora, o jogo precisa tratar a colisão entre as estrelas e as plataformas. Isso é conseguido por uma alteração na função `update()`adicionando o seguinte:
+
+```
+game.physics.arcade.collide(stars, platforms);
+```
+
+Da mesma forma, o jogo precisa tratar a colisão entre o player e uma estrela. Dessa vez, não será usada a função `collide()`, mas a função `overlap()` \(ainda na função `update()`\):
+
+```
+game.physics.arcade.overlap(player, stars, collectStar, null, this);
+```
+
+A função `overlap()` recebe como parâmetros:
+
+* os objetos \(`player` e `stars`\) para os quais deve-se verificar se há uma sobreposição \(outra forma de tratar colisão\)
+* uma função callback chamada `collectStar`, para ser executada quando houver uma sobreposição
+
+Importante considerar que a colisão não é tratada entre o player e cada estrela diretamente, mas entre o player e o grupo de estrelas. Quando isso acontece, o Phaser fica responsável por identificar que a colisão deve ser tratada entre o player e cada objeto \(estrela\) do grupo.
+
+A função `collectStar()`recebe dois parâmetros: player e star e, nesse caso, executa a função kill\(\) indicando que a estrela deve ser excluída do jogo:
+
+```
+function collectStar(player, star) {
+    star.kill();
+}
+```
 
 
 
