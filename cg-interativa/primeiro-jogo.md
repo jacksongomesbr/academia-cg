@@ -225,12 +225,12 @@ var scoreText;
 
 function create() {
     // ...
-    
+
     scoreText = game.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
 }
 ```
 
-A função `game.add.text()` cria um objeto \(`scoreText`\) que representa texto. Os parâmetros indicam a posição do texto na tela, o texto que será apresentado \(começa com pontuação zero\) e algumas propriedades de estilo e apresentação \(tamanho da fonte e cor\). 
+A função `game.add.text()` cria um objeto \(`scoreText`\) que representa texto. Os parâmetros indicam a posição do texto na tela, o texto que será apresentado \(começa com pontuação zero\) e algumas propriedades de estilo e apresentação \(tamanho da fonte e cor\).
 
 O objeto scoreText é modificado na função `collectStar()`:
 
@@ -243,4 +243,19 @@ function collectStar(player, star) {
 ```
 
 Assim, o código remove do jogo a estrela que colidiu com o player, incrementa a pontuação \(variável `score`\) e atualiza o texto do objeto `scoreText` \(atributo `text`\) para refletir a nova pontuação.
+
+A figura a seguir ilustra o último estágio desse primeiro jogo com Phaser.
+
+![](/assets/phaser-primeiro-jogo-final.png)
+
+Este capítulo apresentou as principais tarefas do desenvolvimento de jogos com Phaser. Para resumir, vimos aqui:
+
+* utilizar sprites para construir um mundo
+* utilizar recursos de física e tratar colisão
+* controlar o player utilizando o teclado
+* apresentar informações textuais na tela
+
+
+
+
 
